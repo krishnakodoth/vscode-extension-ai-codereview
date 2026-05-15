@@ -1,0 +1,173 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 540" font-family="Segoe UI, Arial, sans-serif">
+
+  <!-- Background -->
+  <rect width="900" height="540" fill="#1e1e2e" rx="12"/>
+
+  <!-- Title -->
+  <text x="450" y="38" text-anchor="middle" font-size="18" font-weight="700" fill="#cdd6f4">AI Code Review — Extension Architecture</text>
+
+  <!-- ══════════════════════════════════════════════
+       VS Code column
+  ═══════════════════════════════════════════════ -->
+  <rect x="30" y="60" width="260" height="440" rx="10" fill="#181825" stroke="#585b70" stroke-width="1.5"/>
+  <text x="160" y="86" text-anchor="middle" font-size="12" font-weight="600" fill="#89b4fa">VS Code</text>
+
+  <!-- Activity Bar icon -->
+  <rect x="55" y="100" width="210" height="54" rx="7" fill="#313244" stroke="#45475a" stroke-width="1"/>
+  <text x="160" y="122" text-anchor="middle" font-size="11" font-weight="600" fill="#cdd6f4">Activity Bar Icon</text>
+  <text x="160" y="140" text-anchor="middle" font-size="10" fill="#a6adc8">Opens AI Review Sidebar</text>
+
+  <!-- Sidebar / Webview -->
+  <rect x="55" y="172" width="210" height="200" rx="7" fill="#313244" stroke="#45475a" stroke-width="1"/>
+  <text x="160" y="194" text-anchor="middle" font-size="11" font-weight="600" fill="#cdd6f4">Sidebar Webview</text>
+
+  <!-- Radio options inside sidebar -->
+  <rect x="70" y="204" width="180" height="22" rx="4" fill="#1e1e2e"/>
+  <circle cx="84" cy="215" r="5" fill="none" stroke="#89b4fa" stroke-width="1.5"/>
+  <circle cx="84" cy="215" r="2.5" fill="#89b4fa"/>
+  <text x="95" y="219" font-size="10" fill="#a6adc8">Full Git Diff</text>
+
+  <rect x="70" y="230" width="180" height="22" rx="4" fill="#1e1e2e"/>
+  <circle cx="84" cy="241" r="5" fill="none" stroke="#89b4fa" stroke-width="1.5"/>
+  <text x="95" y="245" font-size="10" fill="#a6adc8">File Wise</text>
+
+  <rect x="70" y="256" width="180" height="22" rx="4" fill="#1e1e2e"/>
+  <circle cx="84" cy="267" r="5" fill="none" stroke="#89b4fa" stroke-width="1.5"/>
+  <text x="95" y="271" font-size="10" fill="#a6adc8">Commit Wise</text>
+
+  <!-- Start Review button -->
+  <rect x="70" y="286" width="180" height="28" rx="5" fill="#89b4fa"/>
+  <text x="160" y="304" text-anchor="middle" font-size="11" font-weight="600" fill="#1e1e2e">Start Review</text>
+
+  <!-- Result area -->
+  <rect x="70" y="322" width="180" height="38" rx="4" fill="#1e1e2e"/>
+  <text x="160" y="337" text-anchor="middle" font-size="9" fill="#a6e3a1">✓ AI Review result rendered here</text>
+  <text x="160" y="352" text-anchor="middle" font-size="9" fill="#6c7086">scrollable, pre-wrapped text</text>
+
+  <!-- Configure bar -->
+  <rect x="55" y="388" width="210" height="42" rx="7" fill="#313244" stroke="#45475a" stroke-width="1"/>
+  <circle cx="75" cy="409" r="6" fill="#a6e3a1"/>
+  <text x="88" y="413" font-size="10" fill="#a6adc8">Webhook configured</text>
+  <rect x="200" y="399" width="54" height="20" rx="4" fill="#89b4fa"/>
+  <text x="227" y="413" text-anchor="middle" font-size="9" font-weight="600" fill="#1e1e2e">Configure</text>
+
+  <!-- Settings -->
+  <rect x="55" y="447" width="210" height="36" rx="7" fill="#313244" stroke="#45475a" stroke-width="1"/>
+  <text x="160" y="462" text-anchor="middle" font-size="10" fill="#cdd6f4">VS Code Settings</text>
+  <text x="160" y="476" text-anchor="middle" font-size="9" fill="#6c7086">ai-review-extension.webhookUrl</text>
+
+  <!-- ══════════════════════════════════════════════
+       Extension Core column
+  ═══════════════════════════════════════════════ -->
+  <rect x="320" y="60" width="260" height="440" rx="10" fill="#181825" stroke="#585b70" stroke-width="1.5"/>
+  <text x="450" y="86" text-anchor="middle" font-size="12" font-weight="600" fill="#89b4fa">Extension Core (Node.js)</text>
+  <text x="450" y="100" text-anchor="middle" font-size="9" fill="#6c7086">AiReviewProvider.ts</text>
+
+  <!-- extension.ts -->
+  <rect x="345" y="108" width="210" height="40" rx="7" fill="#313244" stroke="#45475a" stroke-width="1"/>
+  <text x="450" y="126" text-anchor="middle" font-size="11" font-weight="600" fill="#cdd6f4">extension.ts</text>
+  <text x="450" y="141" text-anchor="middle" font-size="9" fill="#6c7086">Registers WebviewViewProvider</text>
+
+  <!-- resolveWebviewView -->
+  <rect x="345" y="162" width="210" height="40" rx="7" fill="#313244" stroke="#45475a" stroke-width="1"/>
+  <text x="450" y="178" text-anchor="middle" font-size="10" font-weight="600" fill="#cdd6f4">resolveWebviewView()</text>
+  <text x="450" y="194" text-anchor="middle" font-size="9" fill="#6c7086">Handles webview messages</text>
+
+  <!-- git operations -->
+  <rect x="345" y="218" width="210" height="110" rx="7" fill="#313244" stroke="#45475a" stroke-width="1"/>
+  <text x="450" y="236" text-anchor="middle" font-size="10" font-weight="600" fill="#cdd6f4">Git Operations</text>
+  <line x1="345" y1="244" x2="555" y2="244" stroke="#45475a" stroke-width="0.8"/>
+  <text x="365" y="260" font-size="9" fill="#a6adc8">collectFullDiff()</text>
+  <text x="365" y="278" font-size="9" fill="#a6adc8">  git diff</text>
+  <text x="365" y="296" font-size="9" fill="#a6adc8">collectFileDiff()</text>
+  <text x="365" y="314" font-size="9" fill="#a6adc8">  git diff --name-only → QuickPick</text>
+
+  <!-- commit -->
+  <rect x="345" y="342" width="210" height="60" rx="7" fill="#313244" stroke="#45475a" stroke-width="1"/>
+  <text x="450" y="360" text-anchor="middle" font-size="10" font-weight="600" fill="#cdd6f4">collectCommitDiff()</text>
+  <text x="365" y="378" font-size="9" fill="#a6adc8">  InputBox (SHA-1 validated)</text>
+  <text x="365" y="393" font-size="9" fill="#a6adc8">  git show &lt;commitId&gt;</text>
+
+  <!-- postToWebhook -->
+  <rect x="345" y="416" width="210" height="40" rx="7" fill="#313244" stroke="#45475a" stroke-width="1"/>
+  <text x="450" y="432" text-anchor="middle" font-size="10" font-weight="600" fill="#cdd6f4">postToWebhook()</text>
+  <text x="450" y="447" text-anchor="middle" font-size="9" fill="#6c7086">fetch() POST → JSON payload</text>
+
+  <!-- splitDiffByFile -->
+  <rect x="345" y="468" width="210" height="24" rx="6" fill="#45475a"/>
+  <text x="450" y="484" text-anchor="middle" font-size="9" fill="#cdd6f4">splitDiffByFile() · readFullFile() · readFileAtCommit()</text>
+
+  <!-- ══════════════════════════════════════════════
+       n8n / AI column
+  ═══════════════════════════════════════════════ -->
+  <rect x="610" y="60" width="260" height="440" rx="10" fill="#181825" stroke="#585b70" stroke-width="1.5"/>
+  <text x="740" y="86" text-anchor="middle" font-size="12" font-weight="600" fill="#89b4fa">n8n + AI Backend</text>
+
+  <!-- Webhook node -->
+  <rect x="635" y="100" width="210" height="60" rx="7" fill="#313244" stroke="#45475a" stroke-width="1"/>
+  <text x="740" y="120" text-anchor="middle" font-size="11" font-weight="600" fill="#cdd6f4">n8n Webhook Node</text>
+  <text x="740" y="138" text-anchor="middle" font-size="9" fill="#6c7086">Receives POST { files: FileDiff[] }</text>
+  <text x="740" y="152" text-anchor="middle" font-size="9" fill="#6c7086">REACT_APP_AI_REVIEW_WEBHOOK_URL</text>
+
+  <!-- AI model -->
+  <rect x="635" y="178" width="210" height="60" rx="7" fill="#313244" stroke="#45475a" stroke-width="1"/>
+  <text x="740" y="197" text-anchor="middle" font-size="11" font-weight="600" fill="#cdd6f4">AI Model Node</text>
+  <text x="740" y="214" text-anchor="middle" font-size="9" fill="#6c7086">GPT / Claude / Gemini</text>
+  <text x="740" y="229" text-anchor="middle" font-size="9" fill="#6c7086">Analyses diff + full file context</text>
+
+  <!-- Response node -->
+  <rect x="635" y="256" width="210" height="44" rx="7" fill="#313244" stroke="#45475a" stroke-width="1"/>
+  <text x="740" y="273" text-anchor="middle" font-size="10" font-weight="600" fill="#cdd6f4">Respond to Webhook</text>
+  <text x="740" y="290" text-anchor="middle" font-size="9" fill="#6c7086">Returns { review: string }</text>
+
+  <!-- Payload box -->
+  <rect x="635" y="318" width="210" height="100" rx="7" fill="#11111b" stroke="#45475a" stroke-width="1"/>
+  <text x="740" y="336" text-anchor="middle" font-size="10" font-weight="600" fill="#a6adc8">JSON Payload Shape</text>
+  <text x="648" y="354" font-size="8.5" fill="#6c7086">{</text>
+  <text x="656" y="368" font-size="8.5" fill="#6c7086">  files: [{</text>
+  <text x="664" y="382" font-size="8.5" fill="#6c7086">    file, gitDiff, fullFile</text>
+  <text x="656" y="396" font-size="8.5" fill="#6c7086">  }]</text>
+  <text x="648" y="410" font-size="8.5" fill="#6c7086">}</text>
+
+  <!-- Legend -->
+  <rect x="635" y="432" width="210" height="60" rx="7" fill="#313244" stroke="#45475a" stroke-width="1"/>
+  <text x="740" y="450" text-anchor="middle" font-size="10" font-weight="600" fill="#a6adc8">Validation Rules</text>
+  <text x="648" y="465" font-size="9" fill="#6c7086">• Commit SHA: /^[0-9a-f]{7,64}$/i</text>
+  <text x="648" y="479" font-size="9" fill="#6c7086">• Webhook URL: stored in VS Code</text>
+  <text x="648" y="493" font-size="9" fill="#6c7086">  global settings (any time editable)</text>
+
+  <!-- ══════════════════════════════════════════════
+       Arrows
+  ═══════════════════════════════════════════════ -->
+  <!-- Webview ↔ Extension (postMessage) -->
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#89b4fa"/>
+    </marker>
+    <marker id="arr-green" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#a6e3a1"/>
+    </marker>
+    <marker id="arr-yellow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#f9e2af"/>
+    </marker>
+  </defs>
+
+  <!-- Sidebar → Extension: user action -->
+  <line x1="265" y1="298" x2="318" y2="298" stroke="#89b4fa" stroke-width="1.5" marker-end="url(#arr)" stroke-dasharray="4,3"/>
+  <text x="291" y="291" text-anchor="middle" font-size="8" fill="#89b4fa">postMessage</text>
+
+  <!-- Extension → Sidebar: result -->
+  <line x1="318" y1="340" x2="265" y2="340" stroke="#a6e3a1" stroke-width="1.5" marker-end="url(#arr-green)" stroke-dasharray="4,3"/>
+  <text x="291" y="358" text-anchor="middle" font-size="8" fill="#a6e3a1">reviewResult</text>
+
+  <!-- Extension → n8n: HTTP POST -->
+  <line x1="555" y1="436" x2="633" y2="200" stroke="#f9e2af" stroke-width="1.5" marker-end="url(#arr-yellow)"/>
+  <text x="600" y="340" text-anchor="middle" font-size="8" fill="#f9e2af" transform="rotate(-35,600,340)">fetch() POST</text>
+
+  <!-- n8n → Extension: response -->
+  <line x1="633" y1="240" x2="555" y2="447" stroke="#a6e3a1" stroke-width="1.5" marker-end="url(#arr-green)" stroke-dasharray="4,3"/>
+
+  <!-- git (local) label -->
+  <rect x="345" y="492" width="210" height="0" rx="0" fill="none"/>
+
+</svg>
