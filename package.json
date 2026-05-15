@@ -1,0 +1,85 @@
+{
+  "name": "ai-review-extension",
+  "displayName": "AI Code Review",
+  "description": "AI powered code review extension",
+  "version": "0.0.5",
+  "publisher": "krishna.kodoth",
+  "author": {
+    "name": "Krishna Kodoth"
+  },
+  "icon": "media/icon.png",
+  "engines": {
+    "vscode": "^1.118.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "aiReview",
+          "title": "AI Review",
+          "icon": "media/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "aiReview": [
+        {
+          "id": "aiReviewSidebar",
+          "name": "AI Review Panel",
+          "type": "webview",
+          "icon": "media/icon.png"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "ai-review-extension.startReview",
+        "title": "Start AI Review"
+      }
+    ],
+    "configuration": {
+      "title": "AI Code Review",
+      "properties": {
+        "ai-review-extension.webhookUrl": {
+          "type": "string",
+          "default": "",
+          "description": "n8n webhook URL to send code review requests to (e.g. https://your-n8n-instance/webhook/...)."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "pnpm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "vsix": "npx vsce package --no-dependencies",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "pnpm run compile-tests && pnpm run compile && pnpm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/vscode-extension-ai-codereview"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.118.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "typescript-eslint": "^8.56.1",
+    "eslint": "^9.39.3",
+    "typescript": "^5.9.3",
+    "ts-loader": "^9.5.4",
+    "webpack": "^5.105.3",
+    "webpack-cli": "^6.0.1",
+    "@vscode/test-cli": "^0.0.12",
+    "@vscode/test-electron": "^2.5.2"
+  }
+}
